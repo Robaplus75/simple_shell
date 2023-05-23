@@ -90,7 +90,7 @@ void new_process(char *argv[], char *env[], char *argvv[])
 	}
 	else
 	{
-		int wait_val = wait(&pid);
+		int wait_val = wait(NULL);
 
 		if (wait_val == -1)
 		{
