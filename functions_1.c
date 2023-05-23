@@ -42,12 +42,12 @@ void string_splitter(char *command, char *delimit, char *argv[])
 	char *token;
 	int count = 0;
 
-	token = strtok(command, delimit);
+	token = _strtok(command, delimit);
 	while (token)
 	{
 		argv[count] = token;
 		count++;
-		token = strtok(NULL, delimit);
+		token = _strtok(NULL, delimit);
 	}
 	argv[count] = NULL;
 }
@@ -114,10 +114,10 @@ char *_getenv(char *key, size_t len, char **env)
 
 	while (env[i])
 	{
-		token = strtok(env[i], "=");
+		token = _strtok(env[i], "=");
 		if (_strncmp(token, key, len) == 0)
 		{
-			value = strtok(NULL, "=");
+			value = _strtok(NULL, "=");
 			return (value);
 		}
 		i++;

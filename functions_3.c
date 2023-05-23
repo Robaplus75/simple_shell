@@ -30,3 +30,38 @@ int exit_handler(char **argv, char *command)
 	}
 	return (0);
 }
+
+/**
+ * _strtok - separates string into tokens
+ * @string: the string to be separated
+ * @delimiter: the delimiter that is used to separate the string
+ * Return: the token
+ */
+
+char *_strtok(char *string, const char *delimiter)
+{
+	static char *ptr;
+	char *token;
+	int i;
+	int j;
+
+	if (string != NULL)
+		ptr = string;
+	if (ptr == NULL || *ptr == '\0')
+		return (NULL);
+	token = ptr;
+	for (i = 0; token[i] != '\0'; i++)
+	{
+		for (j = 0; delimiter[j] != '\0'; j++)
+		{
+			if (token[i] == delimiter[j])
+			{
+				token[i] = '\0';
+				ptr = &token[i + 1];
+				return (token);
+			}
+		}
+	}
+	ptr = NULL;
+	return (token);
+}

@@ -51,23 +51,25 @@ void concat(char *str1, char *str2, char *str3, char *path)
  * @argv: the path to check
  * @argvv: the argument vector passed through the main function
  * @path_splitted: the path enviroment where the searching takes place
+ * @i: used to check if the path_location needs to freed or not
  * Return: the argvv if it cant be found, the located path if its found
  */
-char *check_file(char **argv, char **argvv, char **path_splitted)
+char *check_file(char **argv, char **argvv, char **path_splitted, int *i)
 {
 	struct stat check1;
 	struct stat check2;
-	char *path_location = malloc(sizeof(char) * 100);
 
 	if (stat(argv[0], &check1) != 0)
 	{
 		int count = 0;
+		char *path_location = malloc(sizeof(char) * 100);
 
 		while (path_splitted[count])
 		{
 			concat(path_splitted[count], "/", argv[0], path_location);
 			if (stat(path_location, &check2) == 0)
 			{
+				*i = 1;
 				return (path_location);
 			}
 			count++;
@@ -76,7 +78,6 @@ char *check_file(char **argv, char **argvv, char **path_splitted)
 		perror(argvv[0]);
 		return (NULL);
 	}
-	free(path_location);
 	return (argv[0]);
 }
 /**

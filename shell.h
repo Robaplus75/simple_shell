@@ -17,10 +17,11 @@ void new_process(char *argv[], char *env[], char *argvv[]);
 char *_getenv(char *key, size_t len, char **env);
 void concat(char *str1, char *str2, char *str3, char *path);
 int _strlen(char *string);
-char *check_file(char **argv, char **argvv, char **path_splitted);
+char *check_file(char **argv, char **argvv, char **path_splitted, int *i);
 void print_env(char **env);
 int _putchar(char c);
 void prompt_handler(bool *pipe_test);
 int exit_handler(char **argv, char *command);
+char *_strtok(char *str, const char *delim);
 
 #endif
