@@ -20,5 +20,7 @@ int _strlen(char *string);
 char *check_file(char **argv, char **argvv, char **path_splitted);
 void print_env(char **env);
 int _putchar(char c);
+void prompt_handler(bool *pipe_test);
+int exit_handler(char **argv, char *command);
 
 #endif

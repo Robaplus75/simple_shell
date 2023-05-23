@@ -72,9 +72,11 @@ char *check_file(char **argv, char **argvv, char **path_splitted)
 			}
 			count++;
 		}
+		free(path_location);
 		perror(argvv[0]);
 		return (NULL);
 	}
+	free(path_location);
 	return (argv[0]);
 }
 /**
