@@ -41,7 +41,7 @@ int exit_handler(char **argv, char *command)
 char *_strtok(char *string, const char *delimiter)
 {
 	static char *ptr;
-	char *token;
+	char *tokn;
 	int i;
 	int j;
 
@@ -49,19 +49,19 @@ char *_strtok(char *string, const char *delimiter)
 		ptr = string;
 	if (ptr == NULL || *ptr == '\0')
 		return (NULL);
-	token = ptr;
-	for (i = 0; token[i] != '\0'; i++)
+	tokn = ptr;
+	for (i = 0; tokn[i] != '\0'; i++)
 	{
 		for (j = 0; delimiter[j] != '\0'; j++)
 		{
-			if (token[i] == delimiter[j])
+			if (tokn[i] == delimiter[j])
 			{
-				token[i] = '\0';
-				ptr = &token[i + 1];
-				return (token);
+				tokn[i] = '\0';
+				ptr = &tokn[i + 1];
+				return (tokn);
 			}
 		}
 	}
 	ptr = NULL;
-	return (token);
+	return (tokn);
 }
