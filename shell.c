@@ -31,7 +31,7 @@ int main(int argc, char *argvv[], char **env)
 		if (command[0] == '\n' || check_whitespace(command) == 1)
 			continue;
 		command[characters - 1] = '\0';
-		string_splitter(command, " \n",  argv);
+		string_splitter(command, " \n\t\r\f\v",  argv);
 		if (exit_handler(argv, command) == 1)
 			return (0);
 		if (_strncmp(argv[0], "env", 3) == 0)
