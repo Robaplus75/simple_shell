@@ -117,6 +117,9 @@ exit_handler: This function checks if the command is an "exit" command.
 	a. It compares the command against the string "exit" using _strncmp to check for an exact match. 
 	b. If the command is an "exit" command, the function frees the dynamically allocated memory for the command string and 			returns 1, indicating that the shell should exit. Otherwise, it returns 0 to continue executing other commands.
 
+*_strtok: function that splits a string into tokens based on a given delimiter. It also modifies the original string by replacing the delimiter characters with null characters. It uses a static variable to keep track of the next token to be returned in subsequent calls.
+	a. It returns a pointer to the first token found in the string
+	b. NULL if there are no tokens
 
 Thank you for reading.
 
