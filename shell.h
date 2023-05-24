@@ -20,7 +20,7 @@ int _strlen(char *string);
 char *check_file(char **argv, char **argvv, char **path_splitted, int *i);
 void print_env(char **env);
 int _putchar(char c);
-void prompt_handler(bool *pipe_test);
+void prompt_handler(bool *pipe_test, int *i);
 int exit_handler(char **argv, char *command);
 char *_strtok(char *str, const char *delim);
 

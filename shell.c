@@ -20,8 +20,7 @@ int main(int argc, char *argvv[], char **env)
 	string_splitter(path, ":", path_splitted);
 	while (1 && !pipe_test)
 	{
-		i = 0;
-		prompt_handler(&pipe_test);
+		prompt_handler(&pipe_test, &i);
 		characters = getline(&command, &cmdsize, stdin);
 		if (characters == -1)
 		{
@@ -31,9 +30,8 @@ int main(int argc, char *argvv[], char **env)
 		}
 		if (command[0] == '\n')
 			continue;
-		if (command[characters - 1] == '\n')
-			command[characters - 1] = '\0';
-		string_splitter(command, "\n ",  argv);
+		command[characters - 1] = '\0';
+		string_splitter(command, " \n",  argv);
 		if (exit_handler(argv, command) == 1)
 			return (0);
 		if (_strncmp(argv[0], "env", 3) == 0)
@@ -50,5 +48,6 @@ int main(int argc, char *argvv[], char **env)
 		if (i == 1)
 			free(pathh);
 	}
+	free(command);
 	return (0);
 }

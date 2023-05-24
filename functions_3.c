@@ -6,8 +6,9 @@
  * @pipe_test: the boolean for the logic
  */
 
-void prompt_handler(bool *pipe_test)
+void prompt_handler(bool *pipe_test, int *i)
 {
+	*i = 0;
 	if (isatty(STDIN_FILENO) == 0)
 		*pipe_test = true;
 	else
