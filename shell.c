@@ -10,7 +10,7 @@
 
 int main(int argc, char *argvv[], char **env)
 {
-	char *path = _getenv("PATH", 4, env), *pathh = NULL, *path_splitted[20];
+	char *path = _getenv("PATH"), *pathh = NULL, *path_splitted[20];
 	size_t cmdsize = 0;
 	char *command = NULL, *argv[10];
 	bool pipe_test = false;

@@ -99,28 +99,32 @@ void new_process(char *argv[], char *env[], char *argvv[])
 		}
 	}
 }
+
 /**
  * _getenv - gets the specified enviroment
  * @key: the key for the value to be found
- * @env: the enviroment
- * @len: size of the key
  * Return: the value
  */
 
-char *_getenv(char *key, size_t len, char **env)
+char *_getenv(const char *key)
 {
-	int i = 0;
-	char *token = NULL, *value = NULL;
+	char **env = environ;
 
-	while (env[i])
+	while (*env != NULL)
 	{
-		token = _strtok(env[i], "=");
-		if (_strncmp(token, key, len) == 0)
+		const char *a = key;
+		const char *b = *env;
+
+		while (*a != '\0' && *a == *b)
 		{
-			value = _strtok(NULL, "=");
-			return (value);
+			a++;
+			b++;
 		}
-		i++;
+		if (*a == '\0' && *b == '=')
+		{
+			return ((char *)(b + 1));
+		}
+		env++;
 	}
 	return (NULL);
 }
