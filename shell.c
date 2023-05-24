@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * main - main Shell Funciton
- * @argc: argument counter
- * @argvv: argument vector
- * @env: the enviroment
+ * main - Main Shell Funciton
+ * @argc: Argument counter
+ * @argvv: Argument vector
+ * @env: The enviroment
  * Return: 0 if everything works, -1 else
  */
 
