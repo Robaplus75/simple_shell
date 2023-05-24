@@ -4,6 +4,7 @@
  * prompt_handler - checks if its from a pipe or not if not
  * it prints the prompt
  * @pipe_test: the boolean for the logic
+ * @i: i used it to free command in the main function
  */
 
 void prompt_handler(bool *pipe_test, int *i)
