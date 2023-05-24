@@ -81,8 +81,8 @@ char *check_file(char **argv, char **argvv, char **path_splitted, int *i)
 	return (argv[0]);
 }
 /**
- * _putchar - prints a character
- * @c: the character to be printed
+ * _putchar - Prints a character
+ * @c: The character to be printed
  * Return: -1 when there is an error
  */
 int _putchar(char c)
@@ -91,8 +91,8 @@ int _putchar(char c)
 }
 
 /**
- * print_env - prints the enviroment
- * @env: the enviroment
+ * print_env - Prints the enviroment
+ * @env: The enviroment
  */
 
 void print_env(char **env)
