@@ -66,3 +66,37 @@ char *_strtok(char *string, const char *delimiter)
 	ptr = NULL;
 	return (tokn);
 }
+
+/**
+ * _isspace - checks if the character is whitespace or not
+ * @c: the character to be checked
+ * Return: 1 if its whitespace, 0 else
+ */
+
+int _isspace(char c)
+{
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\f' || c == '\v')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+/**
+ * check_whitespace - checks if the string is a whitespace or not
+ * @command: the string to be checked
+ * Return: 1 if its whitespace, 0 else
+ */
+
+int check_whitespace(const char *command)
+{
+	while (*command != '\0')
+	{
+		if (!_isspace((unsigned char)*command))
+			return (0);
+		command++;
+	}
+	return (1);
+}

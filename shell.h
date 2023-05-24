@@ -23,5 +23,7 @@ int _putchar(char c);
 void prompt_handler(bool *pipe_test, int *i);
 int exit_handler(char **argv, char *command);
 char *_strtok(char *str, const char *delim);
+int _isspace(char c);
+int check_whitespace(const char *command);
 
 #endif

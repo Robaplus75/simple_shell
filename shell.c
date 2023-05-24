@@ -28,7 +28,7 @@ int main(int argc, char *argvv[], char **env)
 			_putchar('\n');
 			exit(EXIT_SUCCESS);
 		}
-		if (command[0] == '\n')
+		if (command[0] == '\n' || check_whitespace(command) == 1)
 			continue;
 		command[characters - 1] = '\0';
 		string_splitter(command, " \n",  argv);
