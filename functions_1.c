@@ -42,12 +42,12 @@ void string_splitter(char *command, char *delimit, char *argv[])
 	char *token;
 	int count = 0;
 
-	token = _strtok(command, delimit);
+	token = strtok(command, delimit);
 	while (token)
 	{
 		argv[count] = token;
 		count++;
-		token = _strtok(NULL, delimit);
+		token = strtok(NULL, delimit);
 	}
 	argv[count] = NULL;
 }
