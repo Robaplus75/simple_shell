@@ -26,7 +26,7 @@ int main(int argc, char *argvv[], char **env)
 		{
 			free(command);
 			_putchar('\n');
-			exit(0);
+			exit(EXIT_SUCCESS);
 		}
 		if (command[0] == '\n')
 			continue;
