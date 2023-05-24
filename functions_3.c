@@ -34,10 +34,10 @@ int exit_handler(char **argv, char *command)
 }
 
 /**
- * _strtok - separates string into tokens
- * @string: the string to be separated
- * @delimiter: the delimiter that is used to separate the string
- * Return: the token
+ * _strtok - Separates string into tokens
+ * @string: The string to be separated
+ * @delimiter: The delimiter that is used to separate the string
+ * Return: The token
  */
 
 char *_strtok(char *string, const char *delimiter)
