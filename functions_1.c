@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _strncmp - checks if the two strings are the same or not
- * @str_1: string 1
- * @str_2: string 2
- * @num: the number of characters to be compared
+ * _strncmp - Checks if the two strings are the same or not
+ * @str_1: String 1
+ * @str_2: String 2
+ * @num: Number of characters to be compared
  * Return: 0 if they r z same, -1 else
  */
 
